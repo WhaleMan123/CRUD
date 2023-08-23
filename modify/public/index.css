@@ -9,6 +9,15 @@ a {
     color: red;
 }
 
+.btn {
+    display: inline-block;
+    padding: 7px 14px;
+    background: #efefef;
+    border: 1px solid #999;
+    margin-top: 10px;
+    font-size: 11px;
+}
+
 #modify-content-textarea {
     height: 500px;
     padding: 20px;

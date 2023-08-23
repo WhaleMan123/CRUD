@@ -68,3 +68,25 @@ const { uid } = modify_getParams();
 const modify_row = modify_storage.getByUid(uid);
 
 const modify_title = document.querySelector("#modify-title");
+const modify_writer = document.querySelector("#modify-writer");
+const modify_content = document.querySelector("#modify-content-textarea");
+
+const modify_modifyForm = document.querySelector("#modify-form");
+
+modify_modifyForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const title = e.target.title.value;
+    const writer = e.target.writer.value;
+    const content = e.target.content.value;
+
+    modify_row.title = title;
+    modify_row.writer = writer;
+    modify_row.content = content;
+
+    const modifiedrow = modify_row;
+
+    storage.modify(modifiedrow, uid);
+
+    location.href = `/CRUD/view/index.html?id=${uid}`;
+});
