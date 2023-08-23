@@ -4,11 +4,19 @@
 
 ### 황현준
 
+write
+
 ### 임태훈
+
+view
 
 ### 이선균
 
+modify
+
 ### 김보람
+
+list
 
 ## html 구조
 
@@ -48,15 +56,46 @@
 
 ### 구조체
 
+[{
+  uid: ,
+  title: ,
+  writer: ,
+  createdAt: ,
+  content: ,
+  hit: ,
+}, ]
+
 ### localStorage 명칭
 
+게시글 객체 배열: "board"
+
 ## 코드 컨벤션
+
+프리티어 사용
+
+### css
+
+[역할]-명칭
+
+kebab-case 사용
+
+ex) .list-content-wrapper
+
+### js 변수 
+
+[역할]_명칭
+
+camelCase 사용
+
+ex) list_objArr
 
 ## 커밋 컨벤션
 
 ### branch 명칭
 
-[닉네임]/[역할]/[기능]
+[역할]/[기능]
+
+ex) list/
 
 ### feature
 
@@ -70,4 +109,4 @@
 
 ### main
 
-"merge [브랜치 명] / [역할] 작성 완료"
+"merge [브랜치 명] 작성 완료"
