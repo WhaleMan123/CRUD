@@ -1,0 +1,15 @@
+body{
+    margin: 0;
+    border: 0;
+}
+
+
+.write-form-wrapper{
+    width: 70%;
+    margin: auto;
+}
+
+.write-form{
+    display: flex;
+    flex-direction: column;
+}
