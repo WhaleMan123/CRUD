@@ -21,8 +21,7 @@
 // ]);
 
 // localStorage.setItem("board", value);
-
-location.href = `/view/view.html?id=6`;
+// location.href = `/view/index.html?id=${view_i}`;
 
 // --------------------------------------------------------------
 
