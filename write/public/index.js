@@ -16,7 +16,7 @@ class Write_localStorage {
 
     const write_boardData = this.write_getStorage();
 
-    boardData.push(write_board);
+    write_boardData.push(write_board);
 
     localStorage.setItem("board", JSON.stringify(write_boardData));
   };
@@ -65,6 +65,8 @@ function write_formClick(write_localStorage) {
     const write_board = new Board(write_tempObj, write_localStorage);
 
     write_localStorage.write_createStorage(write_board);
+
+    location.href = "../view/index.html?uid=" + write_board.uid;
   });
 }
 
