@@ -52,7 +52,7 @@ list
 
 /view/public/index.css
 
-## 저장소
+## 데이터
 
 ### 구조체
 
@@ -68,6 +68,10 @@ list
 ### localStorage 명칭
 
 게시글 객체 배열: "board"
+
+### URL 값 전달 형식
+
+ex) ../write/uid?=1
 
 ## 코드 컨벤션
 
@@ -93,9 +97,9 @@ ex) list_objArr
 
 ### branch 명칭
 
-[역할]/[기능]
+[역할]
 
-ex) list/
+ex) list
 
 ### feature
 
