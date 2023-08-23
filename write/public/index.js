@@ -1,10 +1,35 @@
 class Write_localStorage {
   constructor() {}
 
+  write_getStorage = () => {
+    const board = localStorage.getItem("board");
+
+    if (board != null) {
+      return JSON.parse(board);
+    } else if (board == null) {
+      return new Array();
+    }
+  };
+
   write_createStorage = (write_board) => {
     const board = JSON.stringify(write_board);
-    localStorage.setItem("board", board);
+
+    const write_boardData = this.write_getStorage();
+
+    boardData.push(write_board);
+
+    localStorage.setItem("board", JSON.stringify(write_boardData));
   };
+
+  write_getUid() {
+    const boardData = this.write_getStorage();
+
+    if (boardData.length == 0) return 1;
+
+    const uid = boardData[boardData.length - 1].uid + 1;
+
+    return uid;
+  }
 }
 
 class Board {
@@ -15,8 +40,8 @@ class Board {
   createdAt;
   hit;
 
-  constructor(write_tempObj) {
-    this.uid = 0;
+  constructor(write_tempObj, write_localStorage) {
+    this.uid = write_localStorage.write_getUid();
     this.title = write_tempObj.title;
     this.writer = write_tempObj.writer;
     this.content = write_tempObj.content;
@@ -25,9 +50,8 @@ class Board {
   }
 }
 
-function write_formClick() {
+function write_formClick(write_localStorage) {
   let write_formSubmit = document.getElementsByClassName("write-form");
-  const write_localStorage = new Write_localStorage();
 
   write_formSubmit[0].addEventListener("submit", (e) => {
     e.preventDefault();
@@ -38,14 +62,15 @@ function write_formClick() {
       content: e.target[2].value,
     };
 
-    const write_board = new Board(write_tempObj);
+    const write_board = new Board(write_tempObj, write_localStorage);
 
     write_localStorage.write_createStorage(write_board);
   });
 }
 
 function write_init() {
-  write_formClick();
+  const write_localStorage = new Write_localStorage();
+  write_formClick(write_localStorage);
 }
 
 write_init();
