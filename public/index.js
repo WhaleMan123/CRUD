@@ -1,6 +1,6 @@
 const list_tbody = document.querySelector("tbody")
 
-const list_tableRow = `
+const list_tableRow = () => `
 <tr>
     <td>1</td>
     <td>wpahrdfdfdfdfdfdfdf</td>
@@ -9,3 +9,5 @@ const list_tableRow = `
     <td>ㅇ</td>
 </tr>
 `
+
+list_tbody.innerHTML= list_tableRow()
