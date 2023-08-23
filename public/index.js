@@ -28,7 +28,7 @@ for (let i = 0; i < board.length; i++) {
   const list_tableRow = () => `
     <tr>
         <td>${board[i].uid}</td>
-        <td>${board[i].title}</td>
+        <td><a href="../view/index.html?uid=${board[i].uid}">${board[i].title}</a></td>
         <td>${board[i].writer}</td>
         <td>${board[i].createdAt}</td>
         <td>${board[i].hit}</td>
