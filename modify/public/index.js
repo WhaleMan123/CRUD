@@ -64,12 +64,16 @@ class Modify_boardRow {
 
 const modify_storage = new Modify_storage();
 
-const { uid } = modify_getParams();
+const uid = modify_getParams().id;
 const modify_row = modify_storage.getByUid(uid);
 
 const modify_title = document.querySelector("#modify-title");
 const modify_writer = document.querySelector("#modify-writer");
 const modify_content = document.querySelector("#modify-content-textarea");
+
+modify_title.value = modify_row.value;
+modify_title.value = modify_row.value;
+modify_content.innerHTML = modify_row.content;
 
 const modify_modifyForm = document.querySelector("#modify-form");
 
