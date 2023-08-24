@@ -71,9 +71,9 @@ const modify_title = document.querySelector("#modify-title");
 const modify_writer = document.querySelector("#modify-writer");
 const modify_content = document.querySelector("#modify-content-textarea");
 
-modify_title.value = modify_row.value;
-modify_title.value = modify_row.value;
-modify_content.innerHTML = modify_row.content;
+modify_title.value = modify_row.title;
+modify_writer.value = modify_row.writer;
+modify_content.value = modify_row.content;
 
 const modify_modifyForm = document.querySelector("#modify-form");
 
@@ -90,7 +90,7 @@ modify_modifyForm.addEventListener("submit", (e) => {
 
     const modifiedrow = modify_row;
 
-    storage.modify(modifiedrow, uid);
+    modify_storage.modify(modifiedrow, uid);
 
-    location.href = `/CRUD/view/index.html?id=${uid}`;
+    location.href = `../view/index.html?id=${uid}`;
 });
