@@ -68,3 +68,9 @@ function handelDeleteBtn() {
 }
 
 view_deleteBtn.addEventListener("click", handelDeleteBtn);
+
+const modify_btn = document.querySelector("#modify-btn");
+
+modify_btn.addEventListener("click", () => {
+  location.href = `../modify/index.html?id=${view_i}`;
+});
